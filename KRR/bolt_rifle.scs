@@ -1,0 +1,208 @@
+sc_node_not_relation->concept_sniper_rifle;;
+
+sc_node_not_relation->stock;;
+
+sc_node_not_relation->percentage_increase_in_characteristics;;
+
+sc_node_not_relation->number;;
+
+sc_node_not_relation->long_barrel;;
+
+sc_node_not_relation->scope;;
+
+sc_node_not_relation->6x_scope;; 
+
+sc_node_not_relation->barrel;;
+ 
+sc_node_not_relation->capacity;;
+
+sc_node_not_relation->larger_clip;; 
+
+sc_node_not_relation->picture;;
+
+sc_node_not_relation->metal_parts;; 
+
+sc_node_not_relation->weight_gainer;;
+
+sc_node_not_relation->ammunition;;
+
+sc_node_not_relation->collected;;
+
+sc_node_not_relation->ordinary;;
+
+sc_node_not_relation->ammo_for_sniper_rifle;;
+
+
+sc_node_norole_relation->nrel_upgrade;;
+
+sc_node_norole_relation->nrel_increase_stability;;
+
+sc_node_norole_relation->nrel_increase_reload_speed;;
+
+sc_node_norole_relation->nrel_change_in_appearance;; 
+
+sc_node_norole_relation->nrel_add;;
+
+sc_node_norole_relation->nrel_increase_damage;; 
+
+sc_node_norole_relation->nrel_increase_capacity;; 
+
+sc_node_norole_relation->nrel_illustration_in_picture;;
+
+sc_node_norole_relation->nrel_upgrade_cost;; 
+
+
+concept_sniper_rifle
+
+->ammunition(*
+ =>nrel_ammunition_type(*
+ <-collected(*
+    <-ammo_for_sniper_rifle;;
+		*);;
+ *);;
+*);
+
+=>nrel_main_idtf:
+	   [Снайперская винтовка]
+	   (*<-lang_ru;;*);
+	   [Sniper rifle]
+	   (*<-lang_en;;*);
+	   
+<-rrel_key_sc_element: ... (*
+	<-definition;;
+	=>nrel_main_idtf:
+	[Возникновение] 
+	(*<-lang_ru;;*);;
+	=>nrel_using_constants: {
+		sniper_rifle
+};;
+	 <=nrel_sc_text_translation: ... (*
+          ->rrel_example:
+	[<b><sc_element sys_idtf= "sniper_rifle"> Снайперскую винтовку </b></sc_element> выдали Элли в Джексоне, перед зачисткой местности от зараженных </b></sc_element> ](* <- lang_ru;; => nrel_format: format_html;; *);;
+    *);;
+ *);
+ 
+ =>nrel_upgrade: stock(*
+	=>nrel_increase_stability: 45 (*
+		<-percentage_increase_in_characteristics;;
+		<-number;;
+		*);;
+	=>nrel_upgrade_cost: 50 (*
+	<-metal_parts;;
+	<-number;;
+		*);;	
+	=>change_in_appearance:weight_gainer(*
+	   <-what_was_added;;
+	*);; 
+*);
+
+<-rrel_key_sc_element: ... (*
+	<-definition;;
+	=>nrel_main_idtf:
+	[Замена приклада] 
+	(*<-lang_ru;;*);;
+	=>nrel_using_constants: {
+		sniper_rifle;
+		stock;
+		nrel_stability
+};;
+	
+	 <=nrel_sc_text_translation: ... (*
+          ->rrel_example:
+	[Увеличивается вес </b></sc_element> <b><sc_element sys_idtf= "stock"> приклада <b><sc_element sys_idtf= "sniper_rifle"> снайперской винтовки</b></sc_element>, чтобы  </b></sc_element> </b></sc_element> <b><sc_element sys_idtf= "nrel_increase_stability"> увеличить стабильность </b></sc_element> оружия </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+    *);;
+ *);
+ 
+ =>nrel_upgrade:capacity(*
+	=>nrel_increase_capacity: 3(*
+		<-percentage_increase_in_characteristics;;
+		<-number;;
+	*);;
+	=>nrel_increase_reload_speed: 65(*
+		<-percentage_increase_in_characteristics;;
+		<-number;;
+	*);;
+		=>nrel_upgrade_cost: 50 (*
+		<-metal_parts;;
+		<-number;;
+	*);;
+	=>change_in_appearance: larger_clip(*
+	   <-what_was_added;;
+	*);; 
+	*);
+	
+<-rrel_key_sc_element: ... (*
+	<-definition;;
+	=>nrel_main_idtf:
+	[Увеличение магазина] 
+	(*<-lang_ru;;*);;
+	=>nrel_using_constants: {
+		sniper_rifle;
+		nrel_increase_capacity;
+		nrel_increase_reload_speed;
+		capacity
+};;
+	
+	 <=nrel_sc_text_translation: ... (*
+          ->rrel_example:
+	[Изготовление </b></sc_element> <b><sc_element sys_idtf= "nrel_increase_capacity"> увеличенного магазина </b></sc_element> чтобы </b></sc_element> <b><sc_element sys_idtf= "nrel_increase_capacity"> увеличить скорость перезарядки </b></sc_element> и вмещать больше патронов в </b></sc_element> <b><sc_element sys_idtf= "capacity"> обойме </b></sc_element> <b><sc_element sys_idtf= "sniper_rifle"> снайперской винтовке</b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+    *);;
+ *);	
+ 
+ 
+=>nrel_upgrade: scope(*
+	=>nrel_add:6x_scope;;
+		=>nrel_upgrade_cost: 80 (*
+		<-metal_parts;;
+		<-number;;
+	*);;
+	=>change_in_appearance: 6x_scope(*
+	   <-what_was_added;;
+	*);; 
+	*);
+	
+<-rrel_key_sc_element: ... (*
+	<-definition;;
+	=>nrel_main_idtf:
+	[Замена прицела] 
+	(*<-lang_ru;;*);;
+	=>nrel_using_constants: {
+		sniper_rifle;
+		scope;
+		6x_scope
+};;
+<=nrel_sc_text_translation: ... (*
+          ->rrel_example:
+	[Замена обычного </b></sc_element> <b><sc_element sys_idtf= "scope"> прицела </b></sc_element>, на </b></sc_element> <b><sc_element sys_idtf= "6x_scope"> прицел с шестикратным зумом </b></sc_element>, позволяет точно стрелять на дальние дистанции с </b></sc_element> <b><sc_element sys_idtf= "sniper_rifle"> снайперской винтовки</b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+    *);;
+ *);	
+ 
+ =>nrel_upgrade: barrel(*
+	=>nrel_increase_damage: 25 (*
+		<-percentage_increase_in_characteristics;;
+		<-number;;
+		*);;
+	=>nrel_upgrade_cost: 100 (*
+	<-metal_parts;;
+	<-number;;
+		*);;	
+	=>change_in_appearance: long_barrel(*
+	   <-what_was_added;;
+	*);; 
+*);
+
+<-rrel_key_sc_element: ... (*
+	<-definition;;
+	=>nrel_main_idtf:
+	[Замена ствола] 
+	(*<-lang_ru;;*);;
+	=>nrel_using_constants: {
+		sniper_rifle;
+		barrel;
+		nrel_increase_damage
+};;
+<=nrel_sc_text_translation: ... (*
+          ->rrel_example:
+	[Замена </b></sc_element> <b><sc_element sys_idtf= "barrel"> ствола </b></sc_element> позволяет производить более </b></sc_element> <b><sc_element sys_idtf= "nrel_increase_damage"> мощные </b></sc_element> выстрелы </b></sc_element> из </b></sc_element> <b><sc_element sys_idtf= "sniper_rifle"> снайперской винтовки </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+    *);;
+ *);;
