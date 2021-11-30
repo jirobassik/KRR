@@ -65,7 +65,7 @@ concept_semi_auto_rifle
 =>nrel_main_idtf:
 	   [Полуавтоматическая винтовка]
 	   (*<-lang_ru;;*);
-	   [Semi-auto rifle]
+	   [Semi auto rifle]
 	   (*<-lang_en;;*);
 	   
 <-rrel_key_sc_element: ... (*
@@ -110,7 +110,7 @@ concept_semi_auto_rifle
 	
 	 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-	[Увеличивается вес </b></sc_element> <b><sc_element sys_idtf= "stock"> приклада <b><sc_element sys_idtf= "semi_auto_rifle"> полуавтоматической винтовки</b></sc_element>, чтобы  </b></sc_element> </b></sc_element> <b><sc_element sys_idtf= "nrel_increase_stability"> увеличить стабильность </b></sc_element> оружия </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+	[Увеличивается вес </b></sc_element> <b><sc_element sys_idtf= "stock"> приклада <b><sc_element sys_idtf= "semi_auto_rifle"> полуавтоматической винтовки</b></sc_element>, чтобы  </b></sc_element> <b><sc_element sys_idtf= "nrel_increase_stability"> увеличить стабильность </b></sc_element> оружия </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
  *);
  
