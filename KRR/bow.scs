@@ -92,11 +92,11 @@ concept_bow
 
 
 =>nrel_upgrade: bowstring(*
-	=>:nrel_nocking_speed: 50 (*
+	=>nrel_nocking_speed: 50 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
 		*);;
-	=>:nrel_draw_speed: 70 (*
+	=>nrel_draw_speed: 70 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
 		*);;
@@ -175,7 +175,7 @@ concept_bow
 	[Добавление улучшенного прицела] 
 	(*<-lang_ru;;*);;
 	=>nrel_using_constants: {
-		scope;
+		scope
 };;
 	 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
