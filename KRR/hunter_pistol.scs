@@ -1,0 +1,85 @@
+sc_node_not_relation->concept_hunter_pistol;;
+
+sc_node_not_relation->percentage_increase_in_characteristics;;
+
+sc_node_not_relation->number;;
+
+sc_node_not_relation->picture;;
+
+sc_node_not_relation->metal_parts;;
+
+sc_node_not_relation->weight_gainer;; 
+
+sc_node_not_relation->ammunition;;
+
+sc_node_not_relation->collected;;
+
+sc_node_not_relation->ordinary;;
+
+sc_node_not_relation->fiery;;
+
+sc_node_not_relation->ammo_for_hunter_pistol;;
+
+sc_node_not_relation->reload;;
+
+sc_node_not_relation->bandolier;;
+
+sc_node_not_relation->new_barrel;;
+
+
+
+sc_node_norole_relation->nrel_ammunition_type;;
+
+sc_node_norole_relation->nrel_upgrade;;
+
+sc_node_norole_relation->nrel_reduced_recoil;;
+
+sc_node_norole_relation->nrel_stability;;
+
+sc_node_norole_relation->nrel_change_in_appearance;; 
+
+sc_node_norole_relation->nrel_increase_magazine_tube;;
+ 
+sc_node_norole_relation->nrel_illustration_in_picture;;
+
+sc_node_norole_relation->nrel_upgrade_cost;;
+
+sc_node_norole_relation->nrel_reload_speed;; 
+
+sc_node_norole_relation->nrel_increase_damage;;
+
+
+concept_hunter_pistol
+
+->ammunition(*
+ =>nrel_ammunition_type(*
+ <-collected(*
+    <-ammo_fot_hunter_pistol;;
+		*);;
+ <-crafting(*
+ <-ordinary;;
+		*);;
+ *);;
+*);
+
+
+=>nrel_main_idtf:
+	   [Охотиничий пистолет]
+	   (*<-lang_ru;;*);
+	   [Hunter pistol]
+	   (*<-lang_en;;*);
+	   
+
+<-rrel_key_sc_element: ... (*
+	<-definition;;
+	=>nrel_main_idtf:
+	[Возникновение] 
+	(*<-lang_ru;;*);;
+	=>nrel_using_constants: {
+		hunter_pistol
+};;
+	 <=nrel_sc_text_translation: ... (*
+          ->rrel_example:
+	[Эбби находит </b></sc_element> <b><sc_element sys_idtf= "hunter_pistol"> охотничий пистолет </b></sc_element> в сейфе, который распологался в доме с трещиной </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+    *);;
+*);;
