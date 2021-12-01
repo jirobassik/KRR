@@ -4,7 +4,6 @@ sc_node_not_relation->percentage_increase_in_characteristics;;
 
 sc_node_not_relation->number;;
 
- 
 sc_node_not_relation->picture;;
 
 sc_node_not_relation->metal_parts;;
@@ -55,7 +54,7 @@ concept_double_barrel_shotgun
 ->ammunition(*
  =>nrel_ammunition_type(*
  <-collected(*
-    <-concept_double_barrel_shotgun;;
+    <-ammo_for_shotgun;;
 		*);;
  <-crafting(*
  <=nrel_union:{ordinary;fiery};;
