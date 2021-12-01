@@ -1,0 +1,173 @@
+sc_node_not_relation->concept_crossbow;;
+
+sc_node_not_relation->percentage_increase_in_characteristics;;
+
+sc_node_not_relation->number;;
+
+sc_node_not_relation->foregrip;;
+
+sc_node_not_relation->black_grip;;
+
+sc_node_not_relation->picture;;
+
+sc_node_not_relation->metal_parts;; 
+
+sc_node_not_relation->ammunition;;
+
+sc_node_not_relation->collected;;
+
+sc_node_not_relation->arrows_for_crossbow;;
+
+sc_node_not_relation->4x_scope;;
+
+sc_node_not_relation->scope;;
+
+sc_node_norole_relation->reload;;
+
+sc_node_norole_relation->quiver;;
+
+
+
+sc_node_norole_relation->nrel_ammunition_type;;
+
+sc_node_norole_relation->nrel_reload_speed;;
+
+sc_node_norole_relation->nrel_upgrade;;
+
+sc_node_norole_relation->nrel_increase_stability;;
+
+sc_node_norole_relation->nrel_change_in_appearance;; 
+
+sc_node_norole_relation->nrel_stability;;
+
+sc_node_norole_relation->nrel_illustration_in_picture;;
+
+sc_node_norole_relation->nrel_upgrade_cost;; 
+
+
+concept_crossbow
+
+
+=>nrel_main_idtf:
+	   [Арбалет]
+	   (*<-lang_ru;;*);
+	   [Crossbow]
+	   (*<-lang_en;;*);
+	   
+->ammunition(*
+ =>nrel_ammunition_type(*
+ <-collected(*
+    <-arrows_for_crossbowbow;;
+		*);;
+ *);;
+*);
+
+
+
+<-rrel_key_sc_element: ... (*
+	<-definition;;
+	=>nrel_main_idtf:
+	[Возникновение] 
+	(*<-lang_ru;;*);;
+	=>nrel_using_constants: {
+		crossbow
+};;
+	 <=nrel_sc_text_translation: ... (*
+          ->rrel_example:
+	[Эбби находит </b></sc_element> <b><sc_element sys_idtf= "crossbow">  арбалет </b></sc_element> на побережье Сиэтла, в разбившемся транспортном корабле </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+    *);;
+*);
+
+
+=>nrel_upgrade: foregrip(*
+	=>nrel_stability: 55(*
+		<-percentage_increase_in_characteristics;;
+		<-number;;
+		*);;
+		=>nrel_upgrade_cost: 50 (*
+	<-metal_parts;;
+	<-number;;
+		*);;
+	=>change_in_appearance: black_grip(*
+	   <-what_was_added;;
+	*);;
+*);
+
+
+<-rrel_key_sc_element: ... (*
+	<-definition;;
+	=>nrel_main_idtf:
+	[Добавление рукоятки] 
+	(*<-lang_ru;;*);;
+	=>nrel_using_constants: {
+		crossbow;
+		foregrip;
+		nrel_stability
+};;
+	 <=nrel_sc_text_translation: ... (*
+          ->rrel_example:
+	[Добавление </b></sc_element> <b><sc_element sys_idtf= "foregrip"> рукоятки </b></sc_element> для </b></sc_element> <b><sc_element sys_idtf= "crossbow">  арбалета </b></sc_element>, позволяет уменьшить </b></sc_element> <b><sc_element sys_idtf= "nrel_stability"> раскачивание </b></sc_element> оружия </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+    *);;
+ *);
+
+
+=>nrel_upgrade: scope(*
+	=>nrel_add:4x_scope;;
+		=>nrel_upgrade_cost: 60 (*
+		<-metal_parts;;
+		<-number;;
+	*);;
+	=>change_in_appearance: 4x_scope(*
+	   <-what_was_added;;
+	*);; 
+*);
+
+
+<-rrel_key_sc_element: ... (*
+	<-definition;;
+	=>nrel_main_idtf:
+	[Замена прицела] 
+	(*<-lang_ru;;*);;
+	=>nrel_using_constants: {
+		crossbow;
+		scope;
+		4x_scope
+};;
+<=nrel_sc_text_translation: ... (*
+          ->rrel_example:
+	[Замена обычного </b></sc_element> <b><sc_element sys_idtf= "scope"> прицела </b></sc_element>, на </b></sc_element> <b><sc_element sys_idtf= "4x_scope"> прицел с четырехкратным зумом </b></sc_element>, позволяет точно стрелять на дальние дистанции с </b></sc_element> <b><sc_element sys_idtf= "crossbow"> арбалета</b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+    *);;
+ *);	
+ 
+ 
+ =>nrel_upgrade: reload(*
+	=>nrel_reload_speed: 55 (*
+		<-percentage_increase_in_characteristics;;
+		<-number;;
+		*);;
+	=>nrel_upgrade_cost: 80 (*
+	<-metal_parts;;
+	<-number;;
+		*);;	
+	=>change_in_appearance:bandolier(*
+	   <-what_was_added;;
+	*);; 
+*); 
+
+
+<-rrel_key_sc_element: ... (*
+	<-definition;;
+	=>nrel_main_idtf:
+	[Добавление колчана] 
+	(*<-lang_ru;;*);;
+	=>nrel_using_constants: {
+		crossbow;
+		reload;
+		quiver		
+};;
+	
+	 <=nrel_sc_text_translation: ... (*
+          ->rrel_example:
+      [Добавление <b><sc_element sys_idtf= "quiver"> колчана </b></sc_element> на </b></sc_element> <b><sc_element sys_idtf= "crossbow"> арбалет </b></sc_element>, позволяет быстрее его </b></sc_element> <b><sc_element sys_idtf= "reload"> перезаряжать</b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+    *);;
+ *);;
