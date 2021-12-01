@@ -4,6 +4,8 @@ sc_node_not_relation->hammer_spring;;
 
 sc_node_not_relation->percentage_increase_in_characteristics;;
 
+sc_node_not_relation->percentage_decrease_in_characteristics;;
+
 sc_node_not_relation->number;;
 
 sc_node_not_relation->grip;;
@@ -30,25 +32,27 @@ sc_node_not_relation->ordinary;;
 
 sc_node_not_relation->ammo_for_revolver;;
 
+sc_node_not_relation->stability;;
+
+sc_node_not_relation->accuracy;;
+
+sc_node_not_relation->damage;;
+
+sc_node_not_relation->reload_speed;;
+
+sc_node_not_relation->rate_of_fire;;
+
 
 
 sc_node_norole_relation->nrel_upgrade;;
 
-sc_node_norole_relation->nrel_increase_stability;;
+sc_node_norole_relation->nrel_increase;;
 
-sc_node_norole_relation->nrel_rate_of_fire;;
-
-sc_node_norole_relation->nrel_increase_reload_speed;;
+sc_node_norole_relation->nrel_reduce;;
 
 sc_node_norole_relation->nrel_change_in_appearance;; 
 
 sc_node_norole_relation->nrel_add;;
-
-sc_node_norole_relation->nrel_increase_damage;; 
-
-sc_node_norole_relation->nrel_stability;;
-
-sc_node_norole_relation->nrel_accuracy;; 
 
 sc_node_norole_relation->nrel_illustration_in_picture;;
 
@@ -86,10 +90,12 @@ concept_revolver
  *);
 
 =>nrel_upgrade: hammer_spring(*
-	=>nrel_increase_stability: 35 (*
+	=>nrel_increase: rate_of_fire (*
+		<-35 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
 		*);;
+	*);;
 	=>nrel_upgrade_cost: 30 (*
 	<-metal_parts;;
 	<-number;;
@@ -107,23 +113,28 @@ concept_revolver
 	=>nrel_using_constants: {
 		revolver;
 		hammer_spring;
-		nrel_rate_of_fire
+		nrel_increase;
+		rate_of_fire
 };;
 	 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-	[Замена </b></sc_element> <b><sc_element sys_idtf= "hammer_spring"> пружины курка </b></sc_element>, позволяет увеличить </b></sc_element> <b><sc_element sys_idtf= "nrel_rate_of_fire"> скорострельность </b></sc_element> <b><sc_element sys_idtf= "revolver"> револьвера </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+	[Замена </b></sc_element> <b><sc_element sys_idtf= "hammer_spring"> пружины курка </b></sc_element>, позволяет </b></sc_element> <b><sc_element sys_idtf= "nrel_increase"> увеличить </b></sc_element> <b><sc_element sys_idtf= "rate_of_fire"> скорострельность </b></sc_element> <b><sc_element sys_idtf= "revolver"> револьвера </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
  *);
  
  =>nrel_upgrade: grip(*
-	=>nrel_stability: 35(*
+	=>nrel_increase: stability(*
+		<- 35 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
 		*);;
-	=>nrel_reduced_recoil: 25(*
+	*);;
+	=>nrel_reduce: recoil(*
+		<- 25 (*
 		<-percentage_decrease_in_characteristics;;
 		<-number;;
 		*);;
+	*);;
 		=>nrel_upgrade_cost: 50 (*
 	<-metal_parts;;
 	<-number;;
@@ -141,20 +152,24 @@ concept_revolver
 	=>nrel_using_constants: {
 		revolver;
 		grip;
-		nrel_reduced_recoil;
-		nrel_stability
+		nrel_reduce;
+		nrel_increase;
+		stability;
+		recoil
 };;
 	 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-	[Замена </b></sc_element> <b><sc_element sys_idtf= "grip"> рукоятки </b></sc_element> <b><sc_element sys_idtf= "revolver"> револьвера </b></sc_element>, позволяет </b></sc_element> <b><sc_element sys_idtf= "nrel_reduced_recoil"> уменьшить отдачу </b></sc_element> и </b></sc_element> <b><sc_element sys_idtf= "nrel_stability"> раскачивание </b></sc_element> оружия </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+	[Замена </b></sc_element> <b><sc_element sys_idtf= "grip"> рукоятки </b></sc_element> <b><sc_element sys_idtf= "revolver"> револьвера </b></sc_element>, позволяет </b></sc_element> <b><sc_element sys_idtf= "nrel_reduce"> уменьшить </b></sc_element> <b><sc_element sys_idtf= "recoil"> отдачу </b></sc_element> и </b></sc_element> <b><sc_element sys_idtf= "nrel_increase"> увеличить </b></sc_element> <b><sc_element sys_idtf= "stability"> стабильность </b></sc_element> оружия </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
  *);
  
  =>nrel_upgrade: speed_loader(*
-	=>nrel_increase_reload_speed: 85(*
+	=>nrel_increase: reload_speed(*
+		<- 85 (*
 		<-percentage_increase_in_characteristics;;
-		<-number;;
+		<-number;;	
 		*);;
+	*);;
 		=>nrel_upgrade_cost: 50 (*
 	<-metal_parts;;
 	<-number;;
@@ -182,14 +197,18 @@ concept_revolver
  
  
  =>nrel_upgrade: barrel(*
-	=>nrel_increase_damage: 40 (*
+	=>nrel_increase: damage (*
+		<- 40 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
 		*);;
-	=>nrel_accuracy: 25 (*
+	*);;
+	=>nrel_increase: accuracy (*
+		<- 25 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
-		*);;	
+		*);;
+	*);;		
 		=>nrel_upgrade_cost: 70 (*
 	<-metal_parts;;
 	<-number;;
@@ -206,12 +225,13 @@ concept_revolver
 	(*<-lang_ru;;*);;
 	=>nrel_using_constants: {
 		revolver;
-		nrel_increase_damage;
-		nrel_accuracy;
+		nrel_increase;
+		damage;
+		accuracy;
 		barrel
 };;
 	 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-	[Замена </b></sc_element> <b><sc_element sys_idtf= "barrel"> ствола </b></sc_element> позволяет производить более </b></sc_element> <b><sc_element sys_idtf= "nrel_increase_damage"> мощные </b></sc_element> и </b></sc_element> <b><sc_element sys_idtf= "nrel_accuracy"> точные </b></sc_element> выстрелы </b></sc_element> из </b></sc_element> <b><sc_element sys_idtf= "revolver"> револьвера </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+	[Замена </b></sc_element> <b><sc_element sys_idtf= "barrel"> ствола </b></sc_element> позволяет производить </b></sc_element> <b><sc_element sys_idtf= "nrel_increase"> более </b></sc_element> <b><sc_element sys_idtf= "damage"> мощные </b></sc_element> и </b></sc_element> <b><sc_element sys_idtf= "accuracy"> точные </b></sc_element> выстрелы из </b></sc_element> <b><sc_element sys_idtf= "revolver"> револьвера </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
  *);;

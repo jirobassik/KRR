@@ -26,6 +26,10 @@ sc_node_norole_relation->reload;;
 
 sc_node_norole_relation->quiver;;
 
+sc_node_norole_relation->stability;;
+
+sc_node_norole_relation->reload_speed;;
+
 
 
 sc_node_norole_relation->nrel_ammunition_type;;
@@ -34,11 +38,9 @@ sc_node_norole_relation->nrel_reload_speed;;
 
 sc_node_norole_relation->nrel_upgrade;;
 
-sc_node_norole_relation->nrel_increase_stability;;
+sc_node_norole_relation->nrel_increase;;
 
 sc_node_norole_relation->nrel_change_in_appearance;; 
-
-sc_node_norole_relation->nrel_stability;;
 
 sc_node_norole_relation->nrel_illustration_in_picture;;
 
@@ -80,10 +82,12 @@ concept_crossbow
 
 
 =>nrel_upgrade: foregrip(*
-	=>nrel_stability: 55(*
+	=>nrel_increase: stability (*
+		<- 55 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
 		*);;
+	*);;
 		=>nrel_upgrade_cost: 50 (*
 	<-metal_parts;;
 	<-number;;
@@ -102,11 +106,12 @@ concept_crossbow
 	=>nrel_using_constants: {
 		crossbow;
 		foregrip;
-		nrel_stability
+		nrel_increase;
+		stability
 };;
 	 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-	[Добавление </b></sc_element> <b><sc_element sys_idtf= "foregrip"> рукоятки </b></sc_element> для </b></sc_element> <b><sc_element sys_idtf= "crossbow">  арбалета </b></sc_element>, позволяет уменьшить </b></sc_element> <b><sc_element sys_idtf= "nrel_stability"> раскачивание </b></sc_element> оружия </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+	[Добавление </b></sc_element> <b><sc_element sys_idtf= "foregrip"> рукоятки </b></sc_element> для </b></sc_element> <b><sc_element sys_idtf= "crossbow">  арбалета </b></sc_element>, позволяет </b></sc_element> для </b></sc_element> <b><sc_element sys_idtf= "crossbow">  арбалета </b></sc_element> <b><sc_element sys_idtf= "nrel_increase"> увеличить </b></sc_element> <b><sc_element sys_idtf= "stability"> стабильность </b></sc_element> оружия </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
  *);
 
@@ -141,9 +146,11 @@ concept_crossbow
  
  
  =>nrel_upgrade: reload(*
-	=>nrel_reload_speed: 55 (*
+	=>nrel_increase: reload_speed (*
+	    <- 55 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
+		*);;
 		*);;
 	=>nrel_upgrade_cost: 80 (*
 	<-metal_parts;;
@@ -163,11 +170,12 @@ concept_crossbow
 	=>nrel_using_constants: {
 		crossbow;
 		reload;
+		nrel_increase;
 		quiver		
 };;
 	
 	 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-      [Добавление <b><sc_element sys_idtf= "quiver"> колчана </b></sc_element> на </b></sc_element> <b><sc_element sys_idtf= "crossbow"> арбалет </b></sc_element>, позволяет быстрее его </b></sc_element> <b><sc_element sys_idtf= "reload"> перезаряжать</b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+      [Добавление <b><sc_element sys_idtf= "quiver"> колчана </b></sc_element> на </b></sc_element> <b><sc_element sys_idtf= "crossbow"> арбалет </b></sc_element>, позволяет <b><sc_element sys_idtf= "nrel_increase"> быстрее его </b></sc_element> <b><sc_element sys_idtf= "reload"> перезаряжать</b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
  *);;

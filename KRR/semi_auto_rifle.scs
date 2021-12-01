@@ -34,16 +34,19 @@ sc_node_not_relation->collected;;
 
 sc_node_not_relation->ordinary;;
 
+sc_node_not_relation->capacity;;
+
+sc_node_not_relation->stability;;
+
+sc_node_not_relation->rate_of_fire;;
+
+
 
 sc_node_norole_relation->nrel_upgrade;;
 
-sc_node_norole_relation->nrel_rate_of_fire;;
-
 sc_node_norole_relation->nrel_change_in_appearance;; 
 
-sc_node_norole_relation->nrel_increase_capacity;;
-
-sc_node_norole_relation->nrel_increase_stability;;
+sc_node_norole_relation->nrel_increase;;
 
 sc_node_norole_relation->nrel_illustration_in_picture;;
 
@@ -84,10 +87,12 @@ concept_semi_auto_rifle
 	   
 	   
 =>nrel_upgrade: stock(*
-	=>nrel_increase_stability: 35 (*
+	=>nrel_increase:stability(*
+		<- 35 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
 		*);;
+	*);;	
 	=>nrel_upgrade_cost: 50 (*
 	<-metal_parts;;
 	<-number;;
@@ -105,20 +110,23 @@ concept_semi_auto_rifle
 	=>nrel_using_constants: {
 		semi_auto_rifle;
 		stock;
-		nrel_stability
+		nrel_increase;
+		stability
 };;
 	
 	 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-	[Увеличивается вес </b></sc_element> <b><sc_element sys_idtf= "stock"> приклада <b><sc_element sys_idtf= "semi_auto_rifle"> полуавтоматической винтовки</b></sc_element>, чтобы  </b></sc_element> <b><sc_element sys_idtf= "nrel_increase_stability"> увеличить стабильность </b></sc_element> оружия </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+	[<b><sc_element sys_idtf= "nrel_increase">Увеличивается </b></sc_element> вес </b></sc_element> <b><sc_element sys_idtf= "stock"> приклада <b><sc_element sys_idtf= "semi_auto_rifle"> полуавтоматической винтовки</b></sc_element>, чтобы  </b></sc_element> <b><sc_element sys_idtf= "nrel_increase"> увеличить </b></sc_element> <b><sc_element sys_idtf= "stability"> стабильность </b></sc_element> оружия </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
  *);
  
  
- =>nrel_upgrade:capacity(*
-	=>nrel_increase_capacity: 3(*
+ =>nrel_upgrade: clip(*
+	=>nrel_increase: capacity(*
+		<- 3 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
+	*);;
 	*);;
 		=>nrel_upgrade_cost: 60 (*
 		<-metal_parts;;
@@ -138,14 +146,16 @@ concept_semi_auto_rifle
 	=>nrel_using_constants: {
 		semi_auto_rifle;
 		capacity;
-		nrel_increase_capacity 
+		clip;
+		nrel_increase;
+		capacity 
 };;
 	
 	 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-	[Изготовление </b></sc_element> <b><sc_element sys_idtf= "nrel_increase_capacity"> увеличенного магазина</b></sc_element>, вмещающий больше патронов в </b></sc_element> <b><sc_element sys_idtf= "capacity"> обойму </b></sc_element> <b><sc_element sys_idtf= "semi_auto_rifle"> полуавтоматической винтовки</b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+	[Изготовление </b></sc_element> <b><sc_element sys_idtf= "nrel_increase"> увеличенного </b></sc_element> <b><sc_element sys_idtf= "clip"> магазина</b></sc_element>, вмещающий больше патронов в </b></sc_element> <b><sc_element sys_idtf= "capacity"> обойму </b></sc_element> <b><sc_element sys_idtf= "semi_auto_rifle"> полуавтоматической винтовки</b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
- *);
+*);
  
  
  =>nrel_upgrade: scope(*
@@ -157,7 +167,7 @@ concept_semi_auto_rifle
 	=>change_in_appearance: 4x_scope(*
 	   <-what_was_added;;
 	*);; 
-	*);
+*);
 	
 <-rrel_key_sc_element: ... (*
 	<-definition;;
@@ -173,14 +183,16 @@ concept_semi_auto_rifle
           ->rrel_example:
 	[Замена обычного </b></sc_element> <b><sc_element sys_idtf= "scope"> прицела </b></sc_element>, на </b></sc_element> <b><sc_element sys_idtf= "4x_scope"> прицел с четырехкратным зумом </b></sc_element>, позволяет точно стрелять на дальние дистанции с </b></sc_element> <b><sc_element sys_idtf= "semi_auto_rifle"> полуавтоматической винтовки</b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
- *);
+*);
  
  
  =>nrel_upgrade:trigger(*
-	=>nrel_rate_of_fire: 40 (*
+	=>nrel_increase: rate_of_fire (*
+		<- 40(*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
 		*);;
+	*);;	
 	=>nrel_upgrade_cost: 80 (*
 	<-metal_parts;;
 	<-number;;
@@ -198,11 +210,12 @@ concept_semi_auto_rifle
 	=>nrel_using_constants: {
 		semi_auto_rifle;
 		trigger;
-		nrel_rate_of_fire
+		nrel_increase;
+		rate_of_fire
 };;
 	
 	 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-	[Изменение </b></sc_element> <b><sc_element sys_idtf= "trigger"> спускового крючка </b></sc_element>, позволяет позволяет повысить </b></sc_element> <b><sc_element sys_idtf= "nrel_rate_of_fire"> скорострельность </b></sc_element>, то есть производить серию из трех выстрелов из </b></sc_element> <b><sc_element sys_idtf= "semi_auto_rifle"> полуавтоматической винтовки </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+	[Изменение </b></sc_element> <b><sc_element sys_idtf= "trigger"> спускового крючка </b></sc_element>, позволяет <b><sc_element sys_idtf= "nrel_increase"> повысить </b></sc_element> <b><sc_element sys_idtf= "rate_of_fire"> скорострельность </b></sc_element>, то есть производить серию из трех выстрелов из </b></sc_element> <b><sc_element sys_idtf= "semi_auto_rifle"> полуавтоматической винтовки </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
- *);;
+*);;

@@ -38,23 +38,25 @@ sc_node_not_relation->ordinary;;
 
 sc_node_not_relation->ammo_for_pistol;;
 
+sc_node_not_relation->rate_of_fire;;
+
+sc_node_not_relation->recoil;;
+
+sc_node_not_relation->stability;;
+
+sc_node_not_relation->capacity;;
+
 
 
 sc_node_norole_relation->nrel_upgrade;;
 
-sc_node_norole_relation->nrel_rate_of_fire;;
+sc_node_norole_relation->nrel_increase;;
 
 sc_node_norole_relation->nrel_reduce;;
 
 sc_node_norole_relation->nrel_change_in_appearance;; 
 
 sc_node_norole_relation->nrel_accuracy;;
-
-sc_node_norole_relation->nrel_reduced_recoil;; 
-
-sc_node_norole_relation->nrel_increase_capacity;;
-
-sc_node_norole_relation->nrel_increase_stability;;
 
 sc_node_norole_relation->nrel_illustration_in_picture;;
 
@@ -92,15 +94,17 @@ concept_military_pistol
  *);
 
 =>nrel_upgrade:action_spring(*
-	=>nrel_rate_of_fire: 50 (*
+	=>nrel_increase: rate_of_fire (*
+		<- 50 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
 		*);;
+	*);;	
 	=>nrel_upgrade_cost: 40 (*
 	<-metal_parts;;
 	<-number;;
 		*);;	
-	=>change_in_appearance:blue_trigger(*/////////
+	=>change_in_appearance:blue_trigger(*/////////////
 	   <-what_was_added;;
 	*);;
 *);
@@ -111,23 +115,26 @@ concept_military_pistol
 	[Улучшение боевой пружины] 
 	(*<-lang_ru;;*);;
 	=>nrel_using_constants: {
-		gun;
+		military_pistol;
 		action_spring;
-		nrel_rate_of_fire
+		nrel_increase;
+		rate_of_fire
 };;
 	
 	 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-	[Замена </b></sc_element> <b><sc_element sys_idtf= "action_spring"> боевой пружины курка </b></sc_element> позволяет повысить 
-     </b></sc_element> <b><sc_element sys_idtf= "nrel_rate_of_fire"> скорострельность </b></sc_element> <b><sc_element sys_idtf= "military_pistol"> военного пистолета </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+	[Замена </b></sc_element> <b><sc_element sys_idtf= "action_spring"> боевой пружины курка </b></sc_element>  позволяет </b></sc_element> <b><sc_element sys_idtf= "nrel_increase"> повысить 
+     </b></sc_element> <b><sc_element sys_idtf= "rate_of_fire"> скорострельность </b></sc_element> <b><sc_element sys_idtf= "military_pistol"> военного пистолета </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
  *);
 
 =>nrel_upgrade:grip(*
-	=>nrel_increase_stability: 35 (*
+	=>nrel_increase: stability (*
+		<- 35 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
 		*);;
+	*);;	
   =>nrel_upgrade_cost: 50 (*
 	<-metal_parts;;
 	<-number;;
@@ -144,26 +151,30 @@ concept_military_pistol
 	(*<-lang_ru;;*);;
 	=>nrel_using_constants: {
 		grip;
-		nrel_reduce;
-		nrel_increase_stability
+		nrel_increase;
+		stability
 };;
 	
 	 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-	[Замена </b></sc_element> <b><sc_element sys_idtf= "grip"> рукоятки </b></sc_element> позвоялет </b></sc_element> <b><sc_element sys_idtf= "nrel_reduce"> уменьшить </b></sc_element>  <b><sc_element sys_idtf= "nrel_increase_stability"> раскачку </b></sc_element> </b></sc_element> оружия </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+	[Замена </b></sc_element> <b><sc_element sys_idtf= "grip"> рукоятки </b></sc_element> позвоялет </b></sc_element> <b><sc_element sys_idtf= "nrel_increase"> увеличить </b></sc_element>  <b><sc_element sys_idtf= "stability"> стабильность </b></sc_element> </b></sc_element> оружия </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
  *);
 
 
 =>nrel_upgrade:compensator(*
-	=>nrel_accuracy: 25(*
+	=>nrel_increase: accuracy(*
+		<- 25 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
 		*);;
-	=>nrel_reduced_recoil: 35(*
+	*);;	
+	=>nrel_reduce: recoil (*
+		<- 35 (*
 		<-percentage_decrease_in_characteristics;;
 		<-number;;
 		*);;
+	*);;	
 		=>nrel_upgrade_cost: 30 (*
 	<-metal_parts;;
 	<-number;;
@@ -179,23 +190,26 @@ concept_military_pistol
 	[Установка компенсатора] 
 	(*<-lang_ru;;*);;
 	=>nrel_using_constants: {
-		military_pistol;
 		compensator;
-		nrel_accuracy;
-		nrel_reduced_recoil 
+		nrel_increase;
+		nrel_reduce;
+		accuracy;
+		recoil
 };;
 	
 	 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-	[Установка </b></sc_element> <b><sc_element sys_idtf= "compensator"> компенсатора </b></sc_element> позволяет </b></sc_element> <b><sc_element sys_idtf= "nrel_reduced_recoil"> уменьшить отдачу </b></sc_element> и </b></sc_element> <b><sc_element sys_idtf= "nrel_accuracy"> увеличить точность </b></sc_element> при стрельбе </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+	[Установка </b></sc_element> <b><sc_element sys_idtf= "compensator"> компенсатора </b></sc_element> позволяет  </b></sc_element> <b><sc_element sys_idtf= "nrel_reduce"> уменьшить </b></sc_element> <b><sc_element sys_idtf= "recoil"> отдачу </b></sc_element> и </b></sc_element> <b><sc_element sys_idtf= "nrel_increase"> увеличить </b></sc_element> <b><sc_element sys_idtf= "accuracy"> точность </b></sc_element> при стрельбе </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
  *);
 
 
-=>nrel_upgrade:capacity(*
-	=>nrel_increase_capacity: 4(*
+=>nrel_upgrade:clip(*
+	=>nrel_increase: capacity(*
+		<- 4 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
+		*);;
 	*);;
 		=>nrel_upgrade_cost: 50 (*
 		<-metal_parts;;
@@ -213,12 +227,13 @@ concept_military_pistol
 	(*<-lang_ru;;*);;
 	=>nrel_using_constants: {
 		military_pistol;
+		clip;
 		capacity;
-		nrel_increase_capacity 
+		nrel_increase
 };;
 	
 	 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-	[Изготовление </b></sc_element> <b><sc_element sys_idtf= "nrel_increase_capacity"> увеличенного магазина</b></sc_element>, вмещающий больше патронов в </b></sc_element> <b><sc_element sys_idtf= "capacity"> обойму </b></sc_element> <b><sc_element sys_idtf= "military_pistol"> военного пистолета</b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+	[Изготовление </b></sc_element> <b><sc_element sys_idtf= "nrel_increase"> увеличенного </b></sc_element> <b><sc_element sys_idtf= "clip"> магазина</b></sc_element>, вмещающий больше патронов в </b></sc_element> <b><sc_element sys_idtf= "capacity"> обойму </b></sc_element> <b><sc_element sys_idtf= "military_pistol"> военного пистолета</b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
  *);;

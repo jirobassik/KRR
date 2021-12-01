@@ -26,19 +26,24 @@ sc_node_not_relation->bandolier;;
 
 sc_node_not_relation->new_barrel;;
 
+sc_node_not_relation->stability;;
+
+sc_node_not_relation->reload_speed;;
+
+sc_node_not_relation->damage;;
+
+sc_node_not_relation->recoil;;
 
 
 sc_node_norole_relation->nrel_ammunition_type;;
 
 sc_node_norole_relation->nrel_upgrade;;
 
-sc_node_norole_relation->nrel_reduced_recoil;;
-
-sc_node_norole_relation->nrel_stability;;
+sc_node_norole_relation->nrel_reduce;;
 
 sc_node_norole_relation->nrel_change_in_appearance;; 
 
-sc_node_norole_relation->nrel_increase_magazine_tube;;
+sc_node_norole_relation->nrel_increase;;
  
 sc_node_norole_relation->nrel_illustration_in_picture;;
 
@@ -46,7 +51,6 @@ sc_node_norole_relation->nrel_upgrade_cost;;
 
 sc_node_norole_relation->nrel_reload_speed;; 
 
-sc_node_norole_relation->nrel_increase_damage;;
 
 
 concept_double_barrel_shotgun
@@ -86,14 +90,18 @@ concept_double_barrel_shotgun
 
 
 =>nrel_upgrade: stock(*
-	=>nrel_increase_stability: 50 (*
+	=>nrel_increase: stability (*
+		<- 50 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
 		*);;
-	=>nrel_reduced_recoil: 35(*
+		*);;
+	=>nrel_reduce: recoil (*
+		<- 35 (*
 		<-percentage_decrease_in_characteristics;;
 		<-number;;
 		*);;	
+	*);;
 	=>nrel_upgrade_cost: 30 (*
 	<-metal_parts;;
 	<-number;;
@@ -111,22 +119,26 @@ concept_double_barrel_shotgun
 	=>nrel_using_constants: {
 		double_barrel_shotgun;
 		stock;
-		nrel_increase_stability;
-		nrel_reduced_recoil
+		nrel_increase;
+		stability;
+		nrel_reduce;
+		recoil
 		
 };;
 	
 	 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-	[Увеличивается вес </b></sc_element> <b><sc_element sys_idtf= "stock"> приклада <b><sc_element sys_idtf= "double_barrel_shotgun"> двуствольного дробовика</b></sc_element>, чтобы  </b></sc_element> <b><sc_element sys_idtf= "nrel_increase_stability"> увеличить стабильность </b></sc_element> и </b></sc_element> <b><sc_element sys_idtf= "nrel_reduced_recoil"> уменьшить отдачу </b></sc_element> </b></sc_element> оружия </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+	[Увеличивается вес </b></sc_element> <b><sc_element sys_idtf= "stock"> приклада <b><sc_element sys_idtf= "double_barrel_shotgun"> двуствольного дробовика</b></sc_element>, чтобы  </b></sc_element> <b><sc_element sys_idtf= "nrel_increase"> увеличить </b></sc_element> <b><sc_element sys_idtf= "stability"> стабильность </b></sc_element> и </b></sc_element> <b><sc_element sys_idtf= "nrel_reduce"> уменьшить </b></sc_element> <b><sc_element sys_idtf= "recoil"> отдачу </b></sc_element> </b></sc_element> оружия </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
  *);
 
 
-=>nrel_upgrade: reload(*
-	=>nrel_reload_speed: 30 (*
+=>nrel_upgrade: reload (*
+	=>nrel_increase: reload_speed (*
+		<- 30 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
+		*);;
 		*);;
 	=>nrel_upgrade_cost: 40 (*
 	<-metal_parts;;
@@ -146,21 +158,24 @@ concept_double_barrel_shotgun
 	=>nrel_using_constants: {
 		double_barrel_shotgun;
 		reload;
+		nrel_increase;
 		bandolier
 		
 };;
 	
 	 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-      [Добавление <b><sc_element sys_idtf= "bandolier"> патронташа </b></sc_element> на </b></sc_element> <b><sc_element sys_idtf= "double_barrel_shotgun"> двуствольный дробовик </b></sc_element>, позволяет быстрее его </b></sc_element> <b><sc_element sys_idtf= "reload"> перезаряжать</b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+      [Добавление <b><sc_element sys_idtf= "bandolier"> патронташа </b></sc_element> на </b></sc_element> <b><sc_element sys_idtf= "double_barrel_shotgun"> двуствольный дробовик </b></sc_element>, позволяет <b><sc_element sys_idtf= "nrel_increase"> быстрее </b></sc_element> его </b></sc_element> <b><sc_element sys_idtf= "reload"> перезаряжать</b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
  *);
  
  
  =>nrel_upgrade: barrel(*
-	=>nrel_increase_damage: 30 (*
+	=>nrel_increase: damage (*
+		<- 30 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
+		*);;
 		*);;
 	=>nrel_upgrade_cost: 60 (*
 	<-metal_parts;;
@@ -179,11 +194,11 @@ concept_double_barrel_shotgun
 	=>nrel_using_constants: {
 		double_barrel_shotgun;
 		barrel;
-		nrel_increase_damage
+		nrel_increase
 };;
 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-	[Замена </b></sc_element> <b><sc_element sys_idtf= "barrel"> ствола </b></sc_element> позволяет производить более </b></sc_element> <b><sc_element sys_idtf= "nrel_increase_damage"> мощные </b></sc_element> выстрелы </b></sc_element> из </b></sc_element> <b><sc_element sys_idtf= "double_barrel_shotgun"> двуствольного дробовика </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+	[Замена </b></sc_element> <b><sc_element sys_idtf= "barrel"> ствола </b></sc_element> позволяет производить </b></sc_element> <b><sc_element sys_idtf= "nrel_increase"> более </b></sc_element> <b><sc_element sys_idtf= "damage">  мощные </b></sc_element> выстрелы </b></sc_element> из </b></sc_element> <b><sc_element sys_idtf= "double_barrel_shotgun"> двуствольного дробовика </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
  *);;
 	   

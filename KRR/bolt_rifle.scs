@@ -16,6 +16,8 @@ sc_node_not_relation->barrel;;
  
 sc_node_not_relation->capacity;;
 
+sc_node_not_relation->clip;;
+
 sc_node_not_relation->larger_clip;; 
 
 sc_node_not_relation->picture;;
@@ -32,20 +34,21 @@ sc_node_not_relation->ordinary;;
 
 sc_node_not_relation->ammo_for_sniper_rifle;;
 
+sc_node_not_relation->stability;;
+
+sc_node_not_relation->damage;;
+
+sc_node_not_relation->reload_speed;;
+
+
 
 sc_node_norole_relation->nrel_upgrade;;
 
-sc_node_norole_relation->nrel_increase_stability;;
-
-sc_node_norole_relation->nrel_increase_reload_speed;;
+sc_node_norole_relation->nrel_increase;;
 
 sc_node_norole_relation->nrel_change_in_appearance;; 
 
 sc_node_norole_relation->nrel_add;;
-
-sc_node_norole_relation->nrel_increase_damage;; 
-
-sc_node_norole_relation->nrel_increase_capacity;; 
 
 sc_node_norole_relation->nrel_illustration_in_picture;;
 
@@ -61,6 +64,7 @@ concept_sniper_rifle
 		*);;
  *);;
 *);
+
 
 =>nrel_main_idtf:
 	   [Снайперская винтовка]
@@ -83,10 +87,12 @@ concept_sniper_rifle
  *);
  
  =>nrel_upgrade: stock(*
-	=>nrel_increase_stability: 45 (*
+	=>nrel_increase: stability(*
+	    <- 45 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
 		*);;
+	*);;
 	=>nrel_upgrade_cost: 50 (*
 	<-metal_parts;;
 	<-number;;
@@ -104,23 +110,27 @@ concept_sniper_rifle
 	=>nrel_using_constants: {
 		sniper_rifle;
 		stock;
-		nrel_stability
+		stability
 };;
 	
 	 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-	[Увеличивается вес </b></sc_element> <b><sc_element sys_idtf= "stock"> приклада <b><sc_element sys_idtf= "sniper_rifle"> снайперской винтовки</b></sc_element>, чтобы  </b></sc_element> </b></sc_element> <b><sc_element sys_idtf= "nrel_increase_stability"> увеличить стабильность </b></sc_element> оружия </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+	[Увеличивается вес </b></sc_element> <b><sc_element sys_idtf= "stock"> приклада <b><sc_element sys_idtf= "sniper_rifle"> снайперской винтовки</b></sc_element>, чтобы  </b></sc_element> </b></sc_element> <b><sc_element sys_idtf= "nrel_increase"> увеличить </b></sc_element> <b><sc_element sys_idtf= "stability"> стабильность </b></sc_element> оружия </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
  *);
  
- =>nrel_upgrade:capacity(*
-	=>nrel_increase_capacity: 3(*
+ =>nrel_upgrade: clip(*
+	=>nrel_increase: capacity(*
+		<- 3 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
+		*);;
 	*);;
-	=>nrel_increase_reload_speed: 65(*
+	=>nrel_increase: reload_speed(*
+		<- 65 (*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
+		*);;
 	*);;
 		=>nrel_upgrade_cost: 50 (*
 		<-metal_parts;;
@@ -138,14 +148,15 @@ concept_sniper_rifle
 	(*<-lang_ru;;*);;
 	=>nrel_using_constants: {
 		sniper_rifle;
-		nrel_increase_capacity;
-		nrel_increase_reload_speed;
-		capacity
+		nrel_increase;
+		clip;
+		capacity;
+		reload_speed
 };;
 	
 	 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-	[Изготовление </b></sc_element> <b><sc_element sys_idtf= "nrel_increase_capacity"> увеличенного магазина </b></sc_element> чтобы </b></sc_element> <b><sc_element sys_idtf= "nrel_increase_capacity"> увеличить скорость перезарядки </b></sc_element> и вмещать больше патронов в </b></sc_element> <b><sc_element sys_idtf= "capacity"> обойме </b></sc_element> <b><sc_element sys_idtf= "sniper_rifle"> снайперской винтовке</b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+	[Изготовление </b></sc_element> <b><sc_element sys_idtf= "nrel_increase"> увеличенного </b></sc_element> <b><sc_element sys_idtf= "clip"> магазина </b></sc_element> чтобы </b></sc_element> <b><sc_element sys_idtf= "nrel_increase"> увеличить </b></sc_element> <b><sc_element sys_idtf= "reload_speed"> скорость перезарядки </b></sc_element> и вмещать больше патронов в </b></sc_element> <b><sc_element sys_idtf= "capacity"> обойме </b></sc_element> <b><sc_element sys_idtf= "sniper_rifle"> снайперской винтовке</b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
  *);	
  
@@ -178,10 +189,12 @@ concept_sniper_rifle
  *);	
  
  =>nrel_upgrade: barrel(*
-	=>nrel_increase_damage: 25 (*
+	=>nrel_increase: damage(*
+		<- 25(*
 		<-percentage_increase_in_characteristics;;
 		<-number;;
 		*);;
+	*);;
 	=>nrel_upgrade_cost: 100 (*
 	<-metal_parts;;
 	<-number;;
@@ -199,10 +212,11 @@ concept_sniper_rifle
 	=>nrel_using_constants: {
 		sniper_rifle;
 		barrel;
-		nrel_increase_damage
+		nrel_increase;
+		damage
 };;
 <=nrel_sc_text_translation: ... (*
           ->rrel_example:
-	[Замена </b></sc_element> <b><sc_element sys_idtf= "barrel"> ствола </b></sc_element> позволяет производить более </b></sc_element> <b><sc_element sys_idtf= "nrel_increase_damage"> мощные </b></sc_element> выстрелы </b></sc_element> из </b></sc_element> <b><sc_element sys_idtf= "sniper_rifle"> снайперской винтовки </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+	[Замена </b></sc_element> <b><sc_element sys_idtf= "barrel"> ствола </b></sc_element> позволяет производить более </b></sc_element> <b><sc_element sys_idtf= "nrel_increase"> мощные </b></sc_element> выстрелы </b></sc_element> из </b></sc_element> <b><sc_element sys_idtf= "sniper_rifle"> снайперской винтовки </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
  *);;
