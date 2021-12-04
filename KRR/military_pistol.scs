@@ -12,7 +12,7 @@ sc_node_not_relation->grip;;
 
 sc_node_not_relation->sway;;
 
-sc_node_not_relation->blue_trigger;; 
+sc_node_not_relation->new_trigger;; 
 
 sc_node_not_relation->black_grip;;
 
@@ -104,7 +104,7 @@ concept_military_pistol
 	<-metal_parts;;
 	<-number;;
 		*);;	
-	=>change_in_appearance:blue_trigger(*/////////////
+	=>change_in_appearance:new_trigger(*
 	   <-what_was_added;;
 	*);;
 *);

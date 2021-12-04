@@ -34,6 +34,8 @@ sc_node_not_relation->stability;;
 
 sc_node_not_relation->magazine_tube;;
 
+sc_node_not_relation->new_gate;;
+
 
 
 sc_node_norole_relation->nrel_ammunition_type;;
@@ -97,7 +99,7 @@ concept_shotgun
 	<-metal_parts;;
 	<-number;;
 		*);;	
-	=>change_in_appearance:blue_trigger(*/////////////
+	=>change_in_appearance:new_gate(*
 	   <-what_was_added;;
 	*);;
 *);

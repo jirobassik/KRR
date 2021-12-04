@@ -42,6 +42,10 @@ sc_node_not_relation->reload_speed;;
 
 sc_node_not_relation->rate_of_fire;;
 
+sc_node_not_relation->moon_clip;;
+
+sc_node_not_relation->new_hammer;;
+
 
 
 sc_node_norole_relation->nrel_upgrade;;
@@ -100,9 +104,9 @@ concept_revolver
 	<-metal_parts;;
 	<-number;;
 		*);;	
-	=>change_in_appearance:weight_gainer(*
+	=>change_in_appearance: new_hammer(*
 	   <-what_was_added;;
-	*);; /////////
+	*);; 
 *); 
 
 <-rrel_key_sc_element: ... (*
@@ -174,7 +178,7 @@ concept_revolver
 	<-metal_parts;;
 	<-number;;
 		*);;
-	=>change_in_appearance: adding_a_compensator(* /////////////
+	=>change_in_appearance: moon_clip(* 
 	   <-what_was_added;;
 	*);;
 *);

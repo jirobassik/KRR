@@ -40,6 +40,8 @@ sc_node_not_relation->stability;;
 
 sc_node_not_relation->rate_of_fire;;
 
+sc_node_not_relation->firing_mode_switch;;
+
 
 
 sc_node_norole_relation->nrel_upgrade;;
@@ -197,7 +199,7 @@ concept_semi_auto_rifle
 	<-metal_parts;;
 	<-number;;
 		*);;	
-	=>change_in_appearance:blue_trigger(*/////////
+	=>change_in_appearance:firing_mode_switch(*
 	   <-what_was_added;;
 	*);;
 *);

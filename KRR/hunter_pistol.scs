@@ -32,6 +32,8 @@ sc_node_not_relation->damage;;
 
 sc_node_not_relation->grip;;
 
+sc_node_not_relation->new_grip;;
+
 sc_node_not_relation->sway;;
 
 sc_node_not_relation->scope;;
@@ -97,16 +99,16 @@ concept_hunter_pistol
 
 =>nrel_upgrade: barrel(*
 	=>nrel_increase: damage(*
-		<- 25(*                                  ////////////////////////
+		<- 25(*                                  
 		<-percentage_increase_in_characteristics;;
 		<-number;;
 		*);;
 	*);;
-	=>nrel_upgrade_cost: 100 (*                  /////////////////////////
+	=>nrel_upgrade_cost: 80 (*                  
 	<-metal_parts;;
 	<-number;;
 		*);;	
-	=>change_in_appearance: long_barrel(*
+	=>change_in_appearance: new_barrel(*
 	   <-what_was_added;;
 	*);; 
 *);
@@ -131,11 +133,11 @@ concept_hunter_pistol
  
  =>nrel_upgrade:grip(*
 	=>nrel_reduce: sway;;
-  =>nrel_upgrade_cost: 50 (*                      ///////////////////////////////
+  =>nrel_upgrade_cost: 50 (*                      
 	<-metal_parts;;
 	<-number;;
 	*);;	
-		=>change_in_appearance: black_grip(*
+		=>change_in_appearance: new_grip(*
 	   <-what_was_added;;
 	*);;
 	*);
@@ -161,7 +163,7 @@ concept_hunter_pistol
  
  =>nrel_upgrade: scope(*
 	=>nrel_add:4x_scope;;
-		=>nrel_upgrade_cost: 80 (*                     /////////////////////////
+		=>nrel_upgrade_cost: 70 (*                     
 		<-metal_parts;;
 		<-number;;
 	*);;
