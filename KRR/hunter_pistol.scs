@@ -94,7 +94,7 @@ concept_hunter_pistol
           ->rrel_example:
 	[Эбби находит </b></sc_element> <b><sc_element sys_idtf= "hunter_pistol"> охотничий пистолет </b></sc_element> в сейфе, который распологался в доме с трещиной </b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
-*);;
+*);
 
 
 =>nrel_upgrade: barrel(*
