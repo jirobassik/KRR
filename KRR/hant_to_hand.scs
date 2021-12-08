@@ -25,7 +25,7 @@ hand_to_hand
           ->rrel_example:
 	[<b><sc_element sys_idtf= "knife">Нож </b></sc_element> Элли использует в качестве оружия с 14 лет. Им она устраняет зараженных и людей в ближнем бою.</b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
     *);;
-*);;
+*);
 
 =>nrel_use_ebbie: fists;;
 
