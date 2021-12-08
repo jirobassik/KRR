@@ -1,0 +1,46 @@
+sc_node_not_relation->concept_bloater;;
+
+sc_node_not_relation->fourth;;
+
+sc_node_not_relation->hand_to_hand;;
+
+sc_node_not_relation->weapon;;
+
+sc_node_not_relation->further;;
+
+sc_node_not_relation->near;;
+
+sc_node_norole_relation->nrel_than_to_eliminate;;
+
+sc_node_norole_relation->nrel_combat;;
+
+sc_node_norole_relation->nrel_stage;;
+
+
+concept_bloater
+
+=>nrel_main_idtf:
+	   [Топляк]
+	   (*<-lang_ru;;*);
+	   [Bloater]
+	   (*<-lang_en;;*);
+	   
+=>nrel_stage: fourth;
+
+=>nrel_than_to_eliminate: weapon_project;
+
+=>nrel_combat:near;further;
+
+<-rrel_key_sc_element: ... (*
+	<-definition;;
+	=>nrel_main_idtf:
+	[Описание] 
+	(*<-lang_ru;;*);;
+	=>nrel_using_constants: {
+		bloater
+};;
+	 <=nrel_sc_text_translation: ... (*
+          ->rrel_example:
+	[<b><sc_element sys_idtf= "bloater">Топляки </b></sc_element> инфицированы несколько лет. Грибок привел к тому, что они стали медлительными и слепыми, но при этом невероятно сильными и стойкими, а рост грибов служил броней. вздутие живота также может вырывать грибок со своего тела, чтобы использовать его в качестве споровых бомб и бросать их во врагов. Однако этот дополнительный рост грибка делает их уязвимыми для огня.</b></sc_element> ](* <- lang_ru;; => nrel_format: format_html;; *);;
+    *);;
+*);;

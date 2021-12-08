@@ -2,6 +2,18 @@ sc_node_not_relation->concept_subject_domain_of_the_game_the_The_last_of_us_2;;
 
 sc_node_not_relation->weapon_project;;
 
+sc_node_not_relation->knife;;
+
+sc_node_not_relation->fists;;
+
+sc_node_not_relation->hand_to_hand;;
+
+sc_node_not_relation->infected_project;;
+
+sc_node_norole_relation->nrel_use_ellie;;
+
+sc_node_norole_relation->nrel_use_ebbie;;
+
 concept_subject_domain_of_the_game_the_The_last_of_us_2
   
 =>nrel_main_idtf:
@@ -36,5 +48,21 @@ concept_subject_domain_of_the_game_the_The_last_of_us_2
 <-concept_hunter_pistol;;
 
 <-concept_flamethrower;;
+
+*);
+
+->hand_to_hand(*
+
+<=nrel_use_ellie: knife;;
+
+<=nrel_use_ebbie: fists;;
+
+*);
+
+->infected_project(*
+
+<-concept_runner;;
+
+
 
 *);;
