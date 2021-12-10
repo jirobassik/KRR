@@ -2,35 +2,126 @@ sc_node_not_relation->concept_sniper_rifle;;
 
 sc_node_not_relation->stock;;
 
+stock=>nrel_main_idtf:
+	   [приклад]
+	   (*<-lang_ru;;*);
+	   [stock]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->percentage_increase_in_characteristics;;
+
+percentage_increase_in_characteristics=>nrel_main_idtf:
+	   [процент увелечения в характеристики]
+	   (*<-lang_ru;;*);
+	   [percentage increase in characteristics]
+	   (*<-lang_en;;*);;
 
 sc_node_not_relation->number;;
 
+number=>nrel_main_idtf:
+	   [число]
+	   (*<-lang_ru;;*);
+	   [number]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->long_barrel;;
+
+long_barrel=>nrel_main_idtf:
+	   [длинный ствол]
+	   (*<-lang_ru;;*);
+	   [long barrel]
+	   (*<-lang_en;;*);;
 
 sc_node_not_relation->scope;;
 
-sc_node_not_relation->6x_scope;; 
+scope=>nrel_main_idtf:
+	   [прицел]
+	   (*<-lang_ru;;*);
+	   [scope]
+	   (*<-lang_en;;*);;
+
+sc_node_not_relation->6x_scope;;
+
+6x_scope=>nrel_main_idtf:
+	   [6 кратный прицел]
+	   (*<-lang_ru;;*);
+	   [6x scope]
+	   (*<-lang_en;;*);; 
 
 sc_node_not_relation->barrel;;
+
+barel=>nrel_main_idtf:
+	   [ствол]
+	   (*<-lang_ru;;*);
+	   [barrel]
+	   (*<-lang_en;;*);; 
  
 sc_node_not_relation->capacity;;
 
+capacity=>nrel_main_idtf:
+           [объем магазина]
+	   (*<-lang_ru;;*);
+	   [capacity]
+	   (*<-lang_en;;*);; 
+
 sc_node_not_relation->clip;;
+
+clip=>nrel_main_idtf:
+           [магазина]
+	   (*<-lang_ru;;*);
+	   [clip]
+	   (*<-lang_en;;*);; 
 
 sc_node_not_relation->larger_clip;; 
 
+larger_clip=>nrel_main_idtf:
+           [увеличенный магазин]
+	   (*<-lang_ru;;*);
+	   [larger clip]
+	   (*<-lang_en;;*);; 
+
+
 sc_node_not_relation->picture;;
 
-sc_node_not_relation->metal_parts;; 
+sc_node_not_relation->metal_parts;;
+
+metal_parts=>nrel_main_idtf:
+           [металлические части]
+	   (*<-lang_ru;;*);
+	   [metal parts]
+	   (*<-lang_en;;*);;  
 
 sc_node_not_relation->weight_gainer;;
 
+weight_gainer=>nrel_main_idtf:
+           [увеличитель веса]
+	   (*<-lang_ru;;*);
+	   [weight gainer]
+	   (*<-lang_en;;*);;  
+
 sc_node_not_relation->ammunition;;
+
+ammunition=>nrel_main_idtf:
+           [аммуниция]
+	   (*<-lang_ru;;*);
+	   [ammunition]
+	   (*<-lang_en;;*);; 
 
 sc_node_not_relation->collected;;
 
+collected=>nrel_main_idtf:
+           [собираемые]
+	   (*<-lang_ru;;*);
+	   [collected]
+	   (*<-lang_en;;*);; 
+
 sc_node_not_relation->ordinary;;
+
+ordinary=>nrel_main_idtf:
+	   [обычные]
+	   (*<-lang_ru;;*);
+	   [ordinary]
+	   (*<-lang_en;;*);; 
 
 sc_node_not_relation->ammo_for_sniper_rifle;;
 
@@ -43,6 +134,12 @@ sc_node_not_relation->reload_speed;;
 
 
 sc_node_norole_relation->nrel_upgrade;;
+
+nrel_upgrade=>nrel_main_idtf:
+	   [улучшение*]
+	   (*<-lang_ru;;*);
+	   [upgrade*]
+	   (*<-lang_en;;*);;
 
 sc_node_norole_relation->nrel_increase;;
 
