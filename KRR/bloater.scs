@@ -40,7 +40,7 @@ nrel_than_to_eliminate=>nrel_main_idtf:
 	   [than to eliminate*]
 	   (*<-lang_en;;*);;
 
-sc_node_norole_relation->nrel_combat;;
+sc_node_norole_relation->nrel_attack_type;;
 
 nrel_attack_type=>nrel_main_idtf:
 		[тип атак*]
