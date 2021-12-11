@@ -10,6 +10,12 @@ sc_node_not_relation->ordinary;;
 
 sc_node_not_relation->ammo_for_mp5;;
 
+ammo_for_mp5=>nrel_main_idtf:
+		[патроны для мп5]
+	   (*<-lang_ru;;*);
+	   [ammo for mp5]
+	   (*<-lang_en;;*);;
+
 
 
 

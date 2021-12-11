@@ -2,17 +2,41 @@ sc_node_not_relation->concept_bow;;
 
 sc_node_not_relation->bowstring;;
 
+bowstring=>nrel_main_idtf:
+	   [тетива]
+	   (*<-lang_ru;;*);
+	   [bowstring]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->percentage_increase_in_characteristics;;
 
 sc_node_not_relation->number;;
 
 sc_node_not_relation->grip;;
 
+grip=>nrel_main_idtf:
+		[рукоятка]
+	   (*<-lang_ru;;*);
+	   [grip]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->black_grip;;
+
+black_grip=>nrel_main_idtf:
+		[черная рукоятка]
+	   (*<-lang_ru;;*);
+	   [black grip]
+	   (*<-lang_en;;*);;
 
 sc_node_not_relation->scope;;
 
-sc_node_not_relation->improved_bowstring;; 
+sc_node_not_relation->improved_bowstring;;
+
+improved_bowstring=>nrel_main_idtf:
+		[улучшенная тетива]
+	   (*<-lang_ru;;*);
+	   [improved bowstring]
+	   (*<-lang_en;;*);;
   
 sc_node_not_relation->picture;;
 
@@ -20,25 +44,67 @@ sc_node_not_relation->metal_parts;;
 
 sc_node_not_relation->improved_scope;;
 
+improved_scope=>nrel_main_idtf:
+		[улучшенный прицел]
+	   (*<-lang_ru;;*);
+	   [improved scope]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->ammunition;;
 
 sc_node_not_relation->collected;;
 
 sc_node_not_relation->crafting;;
 
+crafting=>nrel_main_idtf:
+		[крафтищиеся]
+	   (*<-lang_ru;;*);
+	   [crafting]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->ordinary;;
 
 sc_node_not_relation->exploding;;
 
+exploding=>nrel_main_idtf:
+		[взрывчатые]
+	   (*<-lang_ru;;*);
+	   [exploding]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->arrows_for_bow;;
+		
+arrows_for_bow=>nrel_main_idtf:
+		[стрелы для лука]
+	   (*<-lang_ru;;*);
+	   [arrows for bow]
+	   (*<-lang_en;;*);;
 
 sc_node_not_relation->stability;;
 
 sc_node_not_relation->accuracy;;
 
+accuracy=>nrel_main_idtf:
+	    [точность]
+	   (*<-lang_ru;;*);
+	   [accuracy]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->draw_speed;;
 
+draw_speed=>nrel_main_idtf:
+	    [скорость смены]
+	   (*<-lang_ru;;*);
+	   [draw speed]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->nocking_speed;;
+
+nocking_speed=>nrel_main_idtf:
+		[скорость натяжения]
+	   (*<-lang_ru;;*);
+	   [nocking speed]
+	   (*<-lang_en;;*);;
 
 
 

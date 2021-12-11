@@ -2,6 +2,12 @@ sc_node_not_relation->concept_flamethrower;;
 
 sc_node_not_relation->no_upgrade;;
 
+no_upgrade=>nrel_main_idtf:
+		[нет улучшений]
+	   (*<-lang_ru;;*);
+	   [no upgrade]
+	   (*<-lang_en;;*);; 
+
 sc_node_not_relation->ammunition;;
 
 sc_node_not_relation->collected;;
@@ -9,6 +15,12 @@ sc_node_not_relation->collected;;
 sc_node_not_relation->ordinary;;
 
 sc_node_not_relation->ammo_for_flamethrower;;
+
+ammo_for_flamethrower=>nrel_main_idtf:
+		[боеприпасы для огнемета]
+	   (*<-lang_ru;;*);
+	   [ammo for flamethrower]
+	   (*<-lang_en;;*);; 
 
 
 

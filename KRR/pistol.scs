@@ -14,6 +14,12 @@ sc_node_not_relation->sway;;
 
 sc_node_not_relation->blue_trigger;; 
 
+blue_trigger=>nrel_main_idtf:
+		[голубой курок]
+	   (*<-lang_ru;;*);
+	   [blue trigger]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->black_grip;;
 
 sc_node_not_relation->compensator;; 

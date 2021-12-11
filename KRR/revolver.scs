@@ -16,6 +16,12 @@ sc_node_not_relation->scope;;
 
 sc_node_not_relation->speed_loader;; 
 
+speed_loader=>nrel_main_idtf:
+		[спид лоадер]
+	   (*<-lang_ru;;*);
+	   [speed loader]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->barrel;;
 
 sc_node_not_relation->long_barrel;;
@@ -32,6 +38,12 @@ sc_node_not_relation->ordinary;;
 
 sc_node_not_relation->ammo_for_revolver;;
 
+ammo_for_revolver=>nrel_main_idtf:
+		[патроны для револьвера]
+	   (*<-lang_ru;;*);
+	   [ammo for revolver]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->stability;;
 
 sc_node_not_relation->accuracy;;
@@ -44,7 +56,19 @@ sc_node_not_relation->rate_of_fire;;
 
 sc_node_not_relation->moon_clip;;
 
+moon_clip=>nrel_main_idtf:
+		[специальный магазин]
+	   (*<-lang_ru;;*);
+	   [special clip]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->new_hammer;;
+
+new_hammer=>nrel_main_idtf:
+		[новый молоточек]
+	   (*<-lang_ru;;*);
+	   [new hammer]
+	   (*<-lang_en;;*);;
 
 
 

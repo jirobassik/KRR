@@ -2,6 +2,12 @@ sc_node_not_relation->concept_runner;;
 
 sc_node_not_relation->first;;
 
+first=>nrel_main_idtf:
+		[первая]
+	   (*<-lang_ru;;*);
+	   [first]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->hand_to_hand;;
 
 sc_node_not_relation->weapon;;

@@ -2,6 +2,12 @@ sc_node_not_relation->rat_king;;
 
 sc_node_not_relation->fifth;;
 
+fifth=>nrel_main_idtf:
+		[пятая]
+	   (*<-lang_ru;;*);
+	   [fifth]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->hand_to_hand;;
 
 sc_node_not_relation->weapon;;

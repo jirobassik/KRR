@@ -8,21 +8,21 @@ sc_node_not_relation->picture;;
 
 sc_node_not_relation->metal_parts;;
 
-sc_node_not_relation->weight_gainer;; 
-
 sc_node_not_relation->ammunition;;
 
 sc_node_not_relation->collected;;
 
 sc_node_not_relation->ordinary;;
 
-sc_node_not_relation->fiery;;
-
 sc_node_not_relation->ammo_for_hunter_pistol;;
 
-sc_node_not_relation->reload;;
+ammo_for_hunter_pistol=>nrel_main_idtf:
+	   [патроны для охотиничего пистолета]
+	   (*<-lang_ru;;*);
+	   [ammo for hunter pistol]
+	   (*<-lang_en;;*);;
 
-sc_node_not_relation->bandolier;;
+sc_node_not_relation->reload;;
 
 sc_node_not_relation->new_barrel;;
 
@@ -34,29 +34,33 @@ sc_node_not_relation->grip;;
 
 sc_node_not_relation->new_grip;;
 
+new_grip=>nrel_main_idtf:
+		[новая рукоятка]
+	   (*<-lang_ru;;*);
+	   [new grip]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->sway;;
+
+sway=>nrel_main_idtf:
+		[раскачка]
+	   (*<-lang_ru;;*);
+	   [sway]
+	   (*<-lang_en;;*);;
 
 sc_node_not_relation->scope;;
 
 sc_node_not_relation->4x_scope;;
 
-
-
-
-
 sc_node_norole_relation->nrel_ammunition_type;;
 
 sc_node_norole_relation->nrel_upgrade;;
-
-sc_node_norole_relation->nrel_stability;;
 
 sc_node_norole_relation->nrel_change_in_appearance;; 
 
 sc_node_norole_relation->nrel_illustration_in_picture;;
 
 sc_node_norole_relation->nrel_upgrade_cost;;
-
-sc_node_norole_relation->nrel_reload_speed;; 
 
 sc_node_norole_relation->nrel_increase;;
 

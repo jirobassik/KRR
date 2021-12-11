@@ -6,6 +6,12 @@ sc_node_not_relation->number;;
 
 sc_node_not_relation->foregrip;;
 
+foregrip=>nrel_main_idtf:
+	    [цевье]
+	   (*<-lang_ru;;*);
+	   [foregrip]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->black_grip;;
 
 sc_node_not_relation->picture;;
@@ -18,13 +24,37 @@ sc_node_not_relation->collected;;
 
 sc_node_not_relation->arrows_for_crossbow;;
 
+arrows_for_crossbow=>nrel_main_idtf:
+	    [стрелы для арбалета]
+	   (*<-lang_ru;;*);
+	   [arrows for crossbow]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->4x_scope;;
+
+4x_scope=>nrel_main_idtf:
+		[4 кратный прицел]
+	   (*<-lang_ru;;*);
+	   [4x scope]
+	   (*<-lang_en;;*);; 
 
 sc_node_not_relation->scope;;
 
 sc_node_norole_relation->reload;;
 
+reload=>nrel_main_idtf:
+		[перезарядка]
+	   (*<-lang_ru;;*);
+	   [reload]
+	   (*<-lang_en;;*);; 
+
 sc_node_norole_relation->quiver;;
+
+quiver=>nrel_main_idtf:
+		[колчан]
+	   (*<-lang_ru;;*);
+	   [quiver]
+	   (*<-lang_en;;*);; 
 
 sc_node_norole_relation->stability;;
 
@@ -33,8 +63,6 @@ sc_node_norole_relation->reload_speed;;
 
 
 sc_node_norole_relation->nrel_ammunition_type;;
-
-sc_node_norole_relation->nrel_reload_speed;;
 
 sc_node_norole_relation->nrel_upgrade;;
 

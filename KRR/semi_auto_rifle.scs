@@ -16,6 +16,12 @@ sc_node_not_relation->capacity;;
 
 sc_node_not_relation->ammo_for_rifle;;
 
+ammo_for_rifle=>nrel_main_idtf:
+		[патроны для винтовки]
+	   (*<-lang_ru;;*);
+	   [ammo for rifle]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->scope;;
 
 sc_node_not_relation->4x_scope;;
@@ -41,6 +47,12 @@ sc_node_not_relation->stability;;
 sc_node_not_relation->rate_of_fire;;
 
 sc_node_not_relation->firing_mode_switch;;
+
+firing_mode_switch=>nrel_main_idtf:
+		[изменение режима стрельбы]
+	   (*<-lang_ru;;*);
+	   [firing mode switch]
+	   (*<-lang_en;;*);;
 
 
 

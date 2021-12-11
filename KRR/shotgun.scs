@@ -12,7 +12,19 @@ sc_node_not_relation->black_grip;;
 
 sc_node_not_relation->magazine_tube;;
 
+magazine_tube=>nrel_main_idtf:
+		[магазинная трубка]
+	   (*<-lang_ru;;*);
+	   [magazine tube]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->extented_magazine_tube;; 
+
+extented_magazine_tube=>nrel_main_idtf:
+		[увеличиная магазинная трубка]
+	   (*<-lang_ru;;*);
+	   [extented magazine tube]
+	   (*<-lang_en;;*);;
   
 sc_node_not_relation->picture;;
 
@@ -32,9 +44,13 @@ sc_node_not_relation->rate_of_fire;;
 
 sc_node_not_relation->stability;;
 
-sc_node_not_relation->magazine_tube;;
-
 sc_node_not_relation->new_gate;;
+
+new_gate=>nrel_main_idtf:
+		[новый затвор]
+	   (*<-lang_ru;;*);
+	   [new gate]
+	   (*<-lang_en;;*);;
 
 
 
@@ -45,8 +61,6 @@ sc_node_norole_relation->nrel_upgrade;;
 sc_node_norole_relation->nrel_reduce;;
 
 sc_node_norole_relation->nrel_increase;;
-
-sc_node_norole_relation->nrel_rate_of_fire;;
 
 sc_node_norole_relation->nrel_stability;;
 

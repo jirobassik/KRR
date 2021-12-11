@@ -59,7 +59,7 @@ barel=>nrel_main_idtf:
 sc_node_not_relation->capacity;;
 
 capacity=>nrel_main_idtf:
-           [объем магазина]
+       [объем магазина]
 	   (*<-lang_ru;;*);
 	   [capacity]
 	   (*<-lang_en;;*);; 
@@ -67,7 +67,7 @@ capacity=>nrel_main_idtf:
 sc_node_not_relation->clip;;
 
 clip=>nrel_main_idtf:
-           [магазина]
+       [магазин]
 	   (*<-lang_ru;;*);
 	   [clip]
 	   (*<-lang_en;;*);; 
@@ -75,7 +75,7 @@ clip=>nrel_main_idtf:
 sc_node_not_relation->larger_clip;; 
 
 larger_clip=>nrel_main_idtf:
-           [увеличенный магазин]
+        [увеличенный магазин]
 	   (*<-lang_ru;;*);
 	   [larger clip]
 	   (*<-lang_en;;*);; 
@@ -86,7 +86,7 @@ sc_node_not_relation->picture;;
 sc_node_not_relation->metal_parts;;
 
 metal_parts=>nrel_main_idtf:
-           [металлические части]
+        [металлические части]
 	   (*<-lang_ru;;*);
 	   [metal parts]
 	   (*<-lang_en;;*);;  
@@ -94,7 +94,7 @@ metal_parts=>nrel_main_idtf:
 sc_node_not_relation->weight_gainer;;
 
 weight_gainer=>nrel_main_idtf:
-           [увеличитель веса]
+       [увеличитель веса]
 	   (*<-lang_ru;;*);
 	   [weight gainer]
 	   (*<-lang_en;;*);;  
@@ -125,11 +125,35 @@ ordinary=>nrel_main_idtf:
 
 sc_node_not_relation->ammo_for_sniper_rifle;;
 
+ammo_for_sniper_rifle=>nrel_main_idtf:
+	   [патроны для снайперской винтовки]
+	   (*<-lang_ru;;*);
+	   [ammo for sniper rifle]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->stability;;
+
+stability=>nrel_main_idtf:
+	   [стабильность]
+	   (*<-lang_ru;;*);
+	   [stability]
+	   (*<-lang_en;;*);;
 
 sc_node_not_relation->damage;;
 
+damage=>nrel_main_idtf:
+	   [урон]
+	   (*<-lang_ru;;*);
+	   [damage]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->reload_speed;;
+
+reload_speed=>nrel_main_idtf:
+	   [скорость перезарядки]
+	   (*<-lang_ru;;*);
+	   [reload speed]
+	   (*<-lang_en;;*);;
 
 
 
@@ -143,13 +167,37 @@ nrel_upgrade=>nrel_main_idtf:
 
 sc_node_norole_relation->nrel_increase;;
 
-sc_node_norole_relation->nrel_change_in_appearance;; 
+nrel_increase=>nrel_main_idtf:
+		[увелечение*]
+	   (*<-lang_ru;;*);
+	   [increase*]
+	   (*<-lang_en;;*);;
+
+sc_node_norole_relation->nrel_change_in_appearance;;
+
+nrel_change_in_appearance=>nrel_main_idtf:
+		[изменения во внешности*]
+	   (*<-lang_ru;;*);
+	   [change in appearance*]
+	   (*<-lang_en;;*);; 
 
 sc_node_norole_relation->nrel_add;;
 
+nrel_add=>nrel_main_idtf:
+		[добавить*]
+	   (*<-lang_ru;;*);
+	   [add*]
+	   (*<-lang_en;;*);;
+
 sc_node_norole_relation->nrel_illustration_in_picture;;
 
-sc_node_norole_relation->nrel_upgrade_cost;; 
+sc_node_norole_relation->nrel_upgrade_cost;;
+
+nrel_upgrade_cost=>nrel_main_idtf:
+	[стоимость улучшения*]
+	   (*<-lang_ru;;*);
+	   [upgrade cost*]
+	   (*<-lang_en;;*);; 
 
 
 concept_sniper_rifle
