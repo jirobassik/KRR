@@ -17,7 +17,7 @@ sc_node_not_relation->ordinary;;
 sc_node_not_relation->ammo_for_hunter_pistol;;
 
 ammo_for_hunter_pistol=>nrel_main_idtf:
-	   [патроны для охотиничего пистолета]
+	   [патроны для охотничего пистолета]
 	   (*<-lang_ru;;*);
 	   [ammo for hunter pistol]
 	   (*<-lang_en;;*);;
@@ -80,7 +80,7 @@ concept_hunter_pistol
 
 
 =>nrel_main_idtf:
-	   [Охотиничий пистолет]
+	   [Охотничий пистолет]
 	   (*<-lang_ru;;*);
 	   [Hunter pistol]
 	   (*<-lang_en;;*);

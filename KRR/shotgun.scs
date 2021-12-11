@@ -2,6 +2,12 @@ sc_node_not_relation->concept_shotgun;;
 
 sc_node_not_relation->spring;;
 
+spring=>nrel_main_idtf:
+	[пружина]
+	   (*<-lang_ru;;*);
+	   [spring]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->percentage_increase_in_characteristics;;
 
 sc_node_not_relation->number;;

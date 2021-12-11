@@ -42,10 +42,10 @@ nrel_than_to_eliminate=>nrel_main_idtf:
 
 sc_node_norole_relation->nrel_combat;;
 
-nrel_combat=>nrel_main_idtf:
-		[бой*]
+nrel_attack_type=>nrel_main_idtf:
+		[тип атак*]
 	   (*<-lang_ru;;*);
-	   [combat*]
+	   [attack type*]
 	   (*<-lang_en;;*);;
 
 sc_node_norole_relation->nrel_stage;;
@@ -69,7 +69,7 @@ concept_bloater
 
 =>nrel_than_to_eliminate: weapon_project;
 
-=>nrel_combat:near;further;
+=>nrel_attack_type:near;further;
 
 <-rrel_key_sc_element: ... (*
 	<-definition;;

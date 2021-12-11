@@ -35,7 +35,7 @@ concept_stalker
 
 =>nrel_than_to_eliminate: weapon_project; hand_to_hand;
 
-=>nrel_combat:near;
+=>nrel_attack_type:near;
 
 <-rrel_key_sc_element: ... (*
 	<-definition;;

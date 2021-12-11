@@ -10,6 +10,12 @@ sc_node_not_relation->grip;;
 
 sc_node_not_relation->trigger;; 
 
+trigger=>nrel_main_idtf:
+	[курок]
+	   (*<-lang_ru;;*);
+	   [trigger]
+	   (*<-lang_en;;*);;
+
 sc_node_not_relation->black_grip;;
 
 sc_node_not_relation->capacity;;

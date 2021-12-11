@@ -50,12 +50,6 @@ sc_node_not_relation->6x_scope;;
 
 sc_node_not_relation->barrel;;
 
-barel=>nrel_main_idtf:
-	   [ствол]
-	   (*<-lang_ru;;*);
-	   [barrel]
-	   (*<-lang_en;;*);; 
- 
 sc_node_not_relation->capacity;;
 
 capacity=>nrel_main_idtf:

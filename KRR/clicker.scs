@@ -16,8 +16,6 @@ sc_node_not_relation->near;;
 
 sc_node_norole_relation->nrel_than_to_eliminate;;
 
-sc_node_norole_relation->nrel_combat;;
-
 sc_node_norole_relation->nrel_stage;;
 
 
@@ -33,7 +31,7 @@ concept_clicker
 
 =>nrel_than_to_eliminate: weapon_project;
 
-=>nrel_combat:near;
+=>nrel_attack_type:near;
 
 <-rrel_key_sc_element: ... (*
 	<-definition;;
